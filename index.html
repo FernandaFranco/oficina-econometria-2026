@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5ª Oficina Rio–São Paulo de Econometria | 4-5 Maio 2026</title>
+    <meta
+      name="description"
+      content="Workshop acadêmico internacional de alto nível em Econometria. Casa das Garças, Rio de Janeiro. 4-5 de maio de 2026."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --navy: #002855;
+        --navy-dark: #001a3d;
+        --navy-light: #003d7a;
+        --gold: #d4af37;
+        --gold-light: #e6c966;
+        --cream: #faf8f5;
+        --white: #ffffff;
+        --gray: #6b7280;
+        --gray-light: #f3f4f6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        line-height: 1.7;
+        color: var(--navy);
+        background: var(--white);
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3 {
+        font-family: "Crimson Text", serif;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        margin-bottom: 2rem;
+      }
+
+      h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1rem;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+
+      .logo {
+        font-family: "Crimson Text", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--navy);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo-accent {
+        color: var(--gold);
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--navy);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(0, 40, 85, 0.65) 0%,
+            rgba(0, 26, 61, 0.7) 100%
+          ),
+          url("https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?q=80&w=2071&auto=format&fit=crop")
+            center/cover;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding-top: 80px;
+        background-attachment: fixed;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(212, 175, 55, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(212, 175, 55, 0.05) 0%,
+            transparent 50%
+          );
+        animation: float 20s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(20px, -20px) scale(1.05);
+        }
+      }
+
+      .hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-label {
+        display: inline-block;
+        background: rgba(212, 175, 55, 0.2);
+        color: var(--gold);
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero h1 {
+        max-width: 900px;
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 1s ease-out;
+        text-shadow:
+          0 4px 20px rgba(0, 0, 0, 0.6),
+          0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        max-width: 700px;
+        margin-bottom: 1rem;
+        opacity: 0.95;
+        animation: fadeInUp 1s ease-out 0.2s both;
+        text-shadow:
+          0 3px 15px rgba(0, 0, 0, 0.6),
+          0 1px 5px rgba(0, 0, 0, 0.4);
+      }
+
+      .hero-date {
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        font-weight: 600;
+        color: var(--gold);
+        margin-bottom: 3rem;
+        animation: fadeInUp 1s ease-out 0.4s both;
+        text-shadow:
+          0 3px 15px rgba(0, 0, 0, 0.7),
+          0 1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        animation: fadeInUp 1s ease-out 0.6s both;
+      }
+
+      .btn {
+        padding: 1rem 2.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: var(--gold);
+        color: var(--navy-dark);
+        border: 2px solid var(--gold);
+      }
+
+      .btn-primary:hover {
+        background: var(--gold-light);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--white);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Section Styles */
+      section {
+        padding: 6rem 2rem;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+      }
+
+      .section-label {
+        color: var(--gold);
+        font-weight: 600;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      /* About Section */
+      .about {
+        background: var(--cream);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-text p {
+        margin-bottom: 1.5rem;
+        color: var(--gray);
+        font-size: 1.1rem;
+      }
+
+      .highlight-box {
+        background: var(--white);
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid var(--gold);
+      }
+
+      .highlight-box h3 {
+        color: var(--navy);
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .highlight-list li {
+        padding-left: 2rem;
+        position: relative;
+        color: var(--gray);
+        font-size: 1.05rem;
+      }
+
+      .highlight-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--gold);
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      /* Topics Section */
+      .topics {
+        background: var(--white);
+      }
+
+      .topics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .topic-card {
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-light) 100%
+        );
+        padding: 2.5rem;
+        border-radius: 12px;
+        color: var(--white);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .topic-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.2) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        transform: translate(40%, -40%);
+      }
+
+      .topic-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 40, 85, 0.3);
+      }
+
+      .topic-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--gold);
+      }
+
+      /* Speakers Section */
+      .speakers {
+        background: var(--cream);
+      }
+
+      .speakers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .speaker-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 3px solid transparent;
+      }
+
+      .speaker-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border-top-color: var(--gold);
+      }
+
+      .speaker-card h3 {
+        font-size: 1.4rem;
+        color: var(--navy);
+        margin-bottom: 0.5rem;
+      }
+
+      .speaker-institution {
+        color: var(--gray);
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .speaker-tag {
+        display: inline-block;
+        background: rgba(212, 175, 55, 0.15);
+        color: var(--gold);
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      /* Venue Section */
+      .venue {
+        background:
+          linear-gradient(
+            135deg,
+            rgba(0, 26, 61, 0.85) 0%,
+            rgba(0, 40, 85, 0.8) 100%
+          ),
+          url("https://images.unsplash.com/photo-1470058869958-2a77ade41c02?q=80&w=1920&auto=format&fit=crop")
+            center/cover;
+        color: var(--white);
+        background-attachment: fixed;
+        position: relative;
+      }
+
+      .venue-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .venue-info h3 {
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+
+      .venue-info p {
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+
+      .venue-detail {
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        border-left: 3px solid var(--gold);
+      }
+
+      .venue-icon {
+        font-size: 1.5rem;
+        color: var(--gold);
+      }
+
+      .venue-detail-content h4 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+        color: var(--gold-light);
+      }
+
+      .venue-detail-content p {
+        opacity: 0.8;
+        font-size: 0.95rem;
+        margin: 0;
+      }
+
+      .map-container {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        height: 500px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Program Section */
+      .program {
+        background: var(--white);
+      }
+
+      .placeholder-box {
+        background: var(--gray-light);
+        border: 2px dashed var(--gray);
+        border-radius: 12px;
+        padding: 4rem 2rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .placeholder-box h3 {
+        color: var(--navy);
+        margin-bottom: 1rem;
+      }
+
+      .placeholder-box p {
+        color: var(--gray);
+        font-size: 1.1rem;
+      }
+
+      /* Support Section */
+      .support {
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-dark) 100%
+        );
+        color: var(--white);
+        text-align: center;
+      }
+
+      .support-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .support-amount {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--gold);
+        margin: 2rem 0;
+        font-family: "Crimson Text", serif;
+      }
+
+      .support-benefits {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+        text-align: left;
+      }
+
+      .benefit-item {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        border-left: 3px solid var(--gold);
+      }
+
+      .benefit-item h4 {
+        color: var(--gold-light);
+        margin-bottom: 0.5rem;
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.1rem;
+      }
+
+      .benefit-item p {
+        opacity: 0.9;
+        font-size: 0.95rem;
+      }
+
+      /* Registration Section */
+      .registration {
+        background: var(--cream);
+      }
+
+      /* Accommodation Section */
+      .accommodation {
+        background: var(--white);
+      }
+
+      /* Sponsors Section */
+      .sponsors {
+        background: var(--cream);
+      }
+
+      /* Contact Section */
+      .contact {
+        background: var(--cream);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .contact-card {
+        background: var(--white);
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+
+      .contact-card h3 {
+        color: var(--navy);
+        margin-bottom: 1rem;
+      }
+
+      .contact-info {
+        color: var(--gray);
+        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+      }
+
+      .contact-info a {
+        color: var(--navy);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .contact-info a:hover {
+        color: var(--gold);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--navy-dark);
+        color: var(--white);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      footer p {
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-logo {
+        font-family: "Crimson Text", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--navy);
+        cursor: pointer;
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .about-content,
+        .venue-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .speakers-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+          text-align: center;
+        }
+
+        section {
+          padding: 4rem 1.5rem;
+        }
+
+        .map-container {
+          height: 300px;
+        }
+      }
+
+      /* Scroll Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <span class="logo-accent">◆</span> 5ª Oficina de Econometria
+        </a>
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#palestrantes">Palestrantes</a></li>
+          <li><a href="#local">Local</a></li>
+          <li><a href="#programa">Programa</a></li>
+          <li><a href="#inscricoes">Inscrições</a></li>
+          <li><a href="#hospedagem">Hospedagem</a></li>
+        </ul>
+        <button class="mobile-menu-btn">☰</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-label">5ª Edição • 2026</span>
+        <h1>Oficina Rio–São Paulo de Econometria</h1>
+        <p class="hero-subtitle">
+          Workshop acadêmico internacional de alto nível dedicado à pesquisa de
+          fronteira em Econometria teórica e aplicada
+        </p>
+        <p class="hero-date">
+          📍 Casa das Garças, Rio de Janeiro • 4-5 de Maio, 2026
+        </p>
+        <div class="hero-cta">
+          <a href="#inscricoes" class="btn btn-primary">Inscreva-se</a>
+          <a href="#sobre" class="btn btn-secondary">Saiba Mais</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about fade-in">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Sobre o Evento</p>
+          <h2>Excelência Acadêmica Internacional</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Criada em 2016, a Oficina Rio–São Paulo de Econometria
+              consolidou-se como um importante espaço de intercâmbio acadêmico
+              entre os principais centros de pesquisa em Economia do Brasil.
+            </p>
+            <p>
+              Esta quinta edição marca a retomada do evento em um formato mais
+              robusto e internacionalizado, ampliando significativamente sua
+              projeção científica e reunindo pesquisadores de universidades de
+              excelência no Brasil, Estados Unidos e Europa.
+            </p>
+            <p>
+              O workshop tem como objetivo promover a disseminação de avanços
+              metodológicos de ponta, fortalecer redes de colaboração entre
+              pesquisadores brasileiros e estrangeiros e integrar jovens
+              pesquisadores aos debates contemporâneos da área de Econometria.
+            </p>
+          </div>
+          <div class="highlight-box">
+            <h3>Formato do Evento</h3>
+            <ul class="highlight-list">
+              <li>4 sessões de palestras convidadas (30 min + debate)</li>
+              <li>
+                2 palestras plenárias com pesquisadores de Harvard e Bologna
+              </li>
+              <li>3 sessões de pôsteres para estudantes de pós-graduação</li>
+              <li>Minicurso pré-evento</li>
+              <li>Prêmio para o melhor artigo apresentado por estudante</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section class="topics fade-in">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Temas Científicos</p>
+          <h2>Áreas de Pesquisa</h2>
+        </div>
+        <div class="topics-grid">
+          <div class="topic-card">
+            <h3>Séries Temporais</h3>
+          </div>
+          <div class="topic-card">
+            <h3>Econometria Financeira</h3>
+          </div>
+          <div class="topic-card">
+            <h3>Econometria Estrutural</h3>
+          </div>
+          <div class="topic-card">
+            <h3>Inferência Causal</h3>
+          </div>
+          <div class="topic-card">
+            <h3>Métodos Bayesianos</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="palestrantes" class="speakers fade-in">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Palestrantes</p>
+          <h2>Pesquisadores de Destaque Internacional</h2>
+          <p style="color: var(--gray); max-width: 700px; margin: 1rem auto">
+            A lista inclui pesquisadores de universidades de excelência que
+            exercem ou exerceram funções editoriais em periódicos internacionais
+            de alto impacto em Econometria.
+          </p>
+        </div>
+        <div class="speakers-grid">
+          <div class="speaker-card">
+            <h3>Elie Tamer</h3>
+            <p class="speaker-institution">Harvard University</p>
+            <span class="speaker-tag">Plenária</span>
+          </div>
+          <div class="speaker-card">
+            <h3>Giuseppe Cavaliere</h3>
+            <p class="speaker-institution">
+              Università di Bologna, University of Exeter
+            </p>
+            <span class="speaker-tag">Plenária</span>
+          </div>
+          <div class="speaker-card">
+            <h3>Cristine Pinto</h3>
+            <p class="speaker-institution">Insper</p>
+          </div>
+          <div class="speaker-card">
+            <h3>Emmanuel Guerre</h3>
+            <p class="speaker-institution">Queen Mary, University of London</p>
+          </div>
+          <div class="speaker-card">
+            <h3>Tatiana Komarova</h3>
+            <p class="speaker-institution">University of Cambridge</p>
+          </div>
+          <div class="speaker-card">
+            <h3>Konrad Menzel</h3>
+            <p class="speaker-institution">New York University</p>
+          </div>
+          <div class="speaker-card">
+            <h3>Luis Alvarez</h3>
+            <p class="speaker-institution">FEA-USP</p>
+          </div>
+          <div class="speaker-card">
+            <h3>Eduardo Mendes</h3>
+            <p class="speaker-institution">EESP/FGV</p>
+          </div>
+          <div class="speaker-card">
+            <h3>Susana Martins</h3>
+            <p class="speaker-institution">Católica de Lisboa</p>
+          </div>
+          <div class="speaker-card">
+            <h3>Sarah Mouabbi</h3>
+            <p class="speaker-institution">Banque de France</p>
+          </div>
+          <div class="speaker-card">
+            <h3>Vitor Possebom</h3>
+            <p class="speaker-institution">EESP/FGV</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="local" class="venue fade-in">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Local</p>
+          <h2>Casa das Garças</h2>
+          <p style="opacity: 0.9; max-width: 700px; margin: 1rem auto">
+            No coração do Rio de Janeiro, um espaço único com projeto
+            arquitetônico de Oscar Niemeyer e jardins de Burle Marx.
+          </p>
+        </div>
+        <div class="venue-content">
+          <div class="venue-info">
+            <div class="venue-detail">
+              <div class="venue-icon">📍</div>
+              <div class="venue-detail-content">
+                <h4>Endereço</h4>
+                <p>
+                  Avenida Padre Leonel Franca, 135<br />Gávea, Rio de Janeiro,
+                  RJ
+                </p>
+              </div>
+            </div>
+
+            <div class="venue-detail">
+              <div class="venue-icon">🏛️</div>
+              <div class="venue-detail-content">
+                <h4>Instituto de Estudos de Política Econômica</h4>
+                <p>
+                  Espaço com auditório para 60 pessoas em residência histórica,
+                  projetada para proporcionar um ambiente acadêmico de
+                  excelência.
+                </p>
+              </div>
+            </div>
+
+            <div class="venue-detail">
+              <div class="venue-icon">🚇</div>
+              <div class="venue-detail-content">
+                <h4>Como Chegar</h4>
+                <p>
+                  <strong>Metrô:</strong> Estações Antero de Quental ou Botafogo
+                  + Metrô Superfície até terminal PUC-Gávea<br />
+                  <strong>Ônibus:</strong> Linhas 432, 435, 410, 539, 583, 112
+                  (Terminal PUC)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.2826447668807!2d-43.23219!3d-22.980167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd558e8c7d9ff%3A0x6c1b0c6e3e8f6f6e!2sAv.%20Padre%20Leonel%20Franca%2C%20135%20-%20G%C3%A1vea%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="programa" class="program fade-in">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Programação</p>
+          <h2>Agenda do Evento</h2>
+        </div>
+        <div class="placeholder-box">
+          <h3>Programação em Breve</h3>
+          <p>
+            A programação detalhada com horários das sessões, palestras e coffee
+            breaks será divulgada em breve. Fique atento às atualizações!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="inscricoes" class="registration fade-in">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Participação</p>
+          <h2>Inscrições</h2>
+        </div>
+        <div class="placeholder-box">
+          <h3>Inscrições em Breve</h3>
+          <p>
+            O sistema de inscrições será aberto em breve. Fique atento às
+            atualizações nesta página ou entre em contato com os organizadores
+            para mais informações.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accommodation Section -->
+    <section id="hospedagem" class="accommodation fade-in">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Hospedagem</p>
+          <h2>Onde se Hospedar</h2>
+        </div>
+        <div class="placeholder-box">
+          <h3>Hotéis Recomendados em Breve</h3>
+          <p>
+            A Casa das Garças está localizada na Gávea, com fácil acesso aos
+            bairros de Leblon, Ipanema e Jardim Botânico. Recomendamos que os
+            participantes busquem hospedagem nessas regiões para maior
+            comodidade durante o evento.
+          </p>
+          <p style="margin-top: 1.5rem; color: var(--gray)">
+            Em breve divulgaremos uma lista de hotéis recomendados próximos ao
+            local do evento.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors fade-in">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Apoio</p>
+          <h2>Patrocinadores</h2>
+        </div>
+        <div class="placeholder-box">
+          <h3>Patrocinadores Confirmados em Breve</h3>
+          <p>
+            Esta seção será atualizada com os logos das instituições e empresas
+            que apoiam a 5ª Oficina Rio–São Paulo de Econometria.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-logo">5ª Oficina Rio–São Paulo de Econometria</div>
+        <p>4-5 de Maio de 2026 • Casa das Garças, Rio de Janeiro</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem">
+          Departamento de Economia • PUC-Rio
+        </p>
+        <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.85rem">
+          © 2026 Oficina Rio–São Paulo de Econometria. Todos os direitos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Navbar scroll effect
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            const navHeight = navbar.offsetHeight;
+            const targetPosition = target.offsetTop - navHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
