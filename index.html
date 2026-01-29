@@ -706,6 +706,38 @@
         margin-bottom: 1rem;
       }
 
+      /* Language Toggle */
+      .lang-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-right: 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .lang-option {
+        padding: 0.4rem 0.6rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: var(--gray);
+      }
+
+      .lang-option:hover {
+        color: var(--navy);
+      }
+
+      .lang-option.active {
+        background: var(--navy);
+        color: var(--white);
+      }
+
+      .lang-divider {
+        color: var(--gray);
+        font-weight: 400;
+      }
+
       /* Mobile Menu */
       .mobile-menu-btn {
         display: none;
@@ -752,6 +784,11 @@
         .map-container {
           height: 300px;
         }
+
+        .hero,
+        .venue {
+          background-attachment: scroll;
+        }
       }
 
       /* Scroll Animations */
@@ -777,13 +814,18 @@
           <span class="logo-accent">◆</span> 5ª Oficina de Econometria
         </a>
         <ul class="nav-links">
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#palestrantes">Palestrantes</a></li>
-          <li><a href="#local">Local</a></li>
-          <li><a href="#programa">Programa</a></li>
-          <li><a href="#inscricoes">Inscrições</a></li>
-          <li><a href="#hospedagem">Hospedagem</a></li>
+          <li><a href="#sobre" data-en="About" data-pt="Sobre">Sobre</a></li>
+          <li><a href="#palestrantes" data-en="Speakers" data-pt="Palestrantes">Palestrantes</a></li>
+          <li><a href="#local" data-en="Venue" data-pt="Local">Local</a></li>
+          <li><a href="#programa" data-en="Program" data-pt="Programa">Programa</a></li>
+          <li><a href="#inscricoes" data-en="Registration" data-pt="Inscrições">Inscrições</a></li>
+          <li><a href="#hospedagem" data-en="Accommodation" data-pt="Hospedagem">Hospedagem</a></li>
         </ul>
+        <div class="lang-toggle" id="langToggle">
+          <span class="lang-option active" data-lang="pt">PT</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-option" data-lang="en">EN</span>
+        </div>
         <button class="mobile-menu-btn">☰</button>
       </div>
     </nav>
@@ -791,18 +833,18 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <span class="hero-label">5ª Edição • 2026</span>
-        <h1>Oficina Rio–São Paulo de Econometria</h1>
-        <p class="hero-subtitle">
+        <span class="hero-label" data-en="5th Edition • 2026" data-pt="5ª Edição • 2026">5ª Edição • 2026</span>
+        <h1 data-en="Rio–São Paulo Econometrics Workshop" data-pt="Oficina Rio–São Paulo de Econometria">Oficina Rio–São Paulo de Econometria</h1>
+        <p class="hero-subtitle" data-en="High-level international academic workshop dedicated to frontier research in theoretical and applied Econometrics" data-pt="Workshop acadêmico internacional de alto nível dedicado à pesquisa de fronteira em Econometria teórica e aplicada">
           Workshop acadêmico internacional de alto nível dedicado à pesquisa de
           fronteira em Econometria teórica e aplicada
         </p>
-        <p class="hero-date">
+        <p class="hero-date" data-en="📍 Casa das Garças, Rio de Janeiro • May 4-5, 2026" data-pt="📍 Casa das Garças, Rio de Janeiro • 4-5 de Maio, 2026">
           📍 Casa das Garças, Rio de Janeiro • 4-5 de Maio, 2026
         </p>
         <div class="hero-cta">
-          <a href="#inscricoes" class="btn btn-primary">Inscreva-se</a>
-          <a href="#sobre" class="btn btn-secondary">Saiba Mais</a>
+          <a href="#inscricoes" class="btn btn-primary" data-en="Register" data-pt="Inscreva-se">Inscreva-se</a>
+          <a href="#sobre" class="btn btn-secondary" data-en="Learn More" data-pt="Saiba Mais">Saiba Mais</a>
         </div>
       </div>
     </section>
@@ -811,23 +853,23 @@
     <section id="sobre" class="about fade-in">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Sobre o Evento</p>
-          <h2>Excelência Acadêmica Internacional</h2>
+          <p class="section-label" data-en="About the Event" data-pt="Sobre o Evento">Sobre o Evento</p>
+          <h2 data-en="International Academic Excellence" data-pt="Excelência Acadêmica Internacional">Excelência Acadêmica Internacional</h2>
         </div>
         <div class="about-content">
           <div class="about-text">
-            <p>
+            <p data-en="Founded in 2016, the Rio–São Paulo Econometrics Workshop has established itself as an important space for academic exchange among the leading Economics research centers in Brazil." data-pt="Criada em 2016, a Oficina Rio–São Paulo de Econometria consolidou-se como um importante espaço de intercâmbio acadêmico entre os principais centros de pesquisa em Economia do Brasil.">
               Criada em 2016, a Oficina Rio–São Paulo de Econometria
               consolidou-se como um importante espaço de intercâmbio acadêmico
               entre os principais centros de pesquisa em Economia do Brasil.
             </p>
-            <p>
+            <p data-en="This fifth edition marks the return of the event in a more robust and internationalized format, significantly expanding its scientific reach and bringing together researchers from leading universities in Brazil, the United States, and Europe." data-pt="Esta quinta edição marca a retomada do evento em um formato mais robusto e internacionalizado, ampliando significativamente sua projeção científica e reunindo pesquisadores de universidades de excelência no Brasil, Estados Unidos e Europa.">
               Esta quinta edição marca a retomada do evento em um formato mais
               robusto e internacionalizado, ampliando significativamente sua
               projeção científica e reunindo pesquisadores de universidades de
               excelência no Brasil, Estados Unidos e Europa.
             </p>
-            <p>
+            <p data-en="The workshop aims to promote the dissemination of cutting-edge methodological advances, strengthen collaboration networks between Brazilian and international researchers, and integrate young researchers into contemporary debates in Econometrics." data-pt="O workshop tem como objetivo promover a disseminação de avanços metodológicos de ponta, fortalecer redes de colaboração entre pesquisadores brasileiros e estrangeiros e integrar jovens pesquisadores aos debates contemporâneos da área de Econometria.">
               O workshop tem como objetivo promover a disseminação de avanços
               metodológicos de ponta, fortalecer redes de colaboração entre
               pesquisadores brasileiros e estrangeiros e integrar jovens
@@ -835,15 +877,15 @@
             </p>
           </div>
           <div class="highlight-box">
-            <h3>Formato do Evento</h3>
+            <h3 data-en="Event Format" data-pt="Formato do Evento">Formato do Evento</h3>
             <ul class="highlight-list">
-              <li>4 sessões de palestras convidadas (30 min + debate)</li>
-              <li>
+              <li data-en="4 invited lecture sessions (30 min + discussion)" data-pt="4 sessões de palestras convidadas (30 min + debate)">4 sessões de palestras convidadas (30 min + debate)</li>
+              <li data-en="2 plenary lectures with researchers from Harvard and Bologna" data-pt="2 palestras plenárias com pesquisadores de Harvard e Bologna">
                 2 palestras plenárias com pesquisadores de Harvard e Bologna
               </li>
-              <li>3 sessões de pôsteres para estudantes de pós-graduação</li>
-              <li>Minicurso pré-evento</li>
-              <li>Prêmio para o melhor artigo apresentado por estudante</li>
+              <li data-en="3 poster sessions for graduate students" data-pt="3 sessões de pôsteres para estudantes de pós-graduação">3 sessões de pôsteres para estudantes de pós-graduação</li>
+              <li data-en="Pre-event short course" data-pt="Minicurso pré-evento">Minicurso pré-evento</li>
+              <li data-en="Best student paper award" data-pt="Prêmio para o melhor artigo apresentado por estudante">Prêmio para o melhor artigo apresentado por estudante</li>
             </ul>
           </div>
         </div>
@@ -854,24 +896,24 @@
     <section class="topics fade-in">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Temas Científicos</p>
-          <h2>Áreas de Pesquisa</h2>
+          <p class="section-label" data-en="Scientific Topics" data-pt="Temas Científicos">Temas Científicos</p>
+          <h2 data-en="Research Areas" data-pt="Áreas de Pesquisa">Áreas de Pesquisa</h2>
         </div>
         <div class="topics-grid">
           <div class="topic-card">
-            <h3>Séries Temporais</h3>
+            <h3 data-en="Time Series" data-pt="Séries Temporais">Séries Temporais</h3>
           </div>
           <div class="topic-card">
-            <h3>Econometria Financeira</h3>
+            <h3 data-en="Financial Econometrics" data-pt="Econometria Financeira">Econometria Financeira</h3>
           </div>
           <div class="topic-card">
-            <h3>Econometria Estrutural</h3>
+            <h3 data-en="Structural Econometrics" data-pt="Econometria Estrutural">Econometria Estrutural</h3>
           </div>
           <div class="topic-card">
-            <h3>Inferência Causal</h3>
+            <h3 data-en="Causal Inference" data-pt="Inferência Causal">Inferência Causal</h3>
           </div>
           <div class="topic-card">
-            <h3>Métodos Bayesianos</h3>
+            <h3 data-en="Bayesian Methods" data-pt="Métodos Bayesianos">Métodos Bayesianos</h3>
           </div>
         </div>
       </div>
@@ -881,9 +923,9 @@
     <section id="palestrantes" class="speakers fade-in">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Palestrantes</p>
-          <h2>Pesquisadores de Destaque Internacional</h2>
-          <p style="color: var(--gray); max-width: 700px; margin: 1rem auto">
+          <p class="section-label" data-en="Speakers" data-pt="Palestrantes">Palestrantes</p>
+          <h2 data-en="Distinguished International Researchers" data-pt="Pesquisadores de Destaque Internacional">Pesquisadores de Destaque Internacional</h2>
+          <p style="color: var(--gray); max-width: 700px; margin: 1rem auto" data-en="The list includes researchers from leading universities who hold or have held editorial positions at high-impact international journals in Econometrics." data-pt="A lista inclui pesquisadores de universidades de excelência que exercem ou exerceram funções editoriais em periódicos internacionais de alto impacto em Econometria.">
             A lista inclui pesquisadores de universidades de excelência que
             exercem ou exerceram funções editoriais em periódicos internacionais
             de alto impacto em Econometria.
@@ -893,14 +935,14 @@
           <div class="speaker-card">
             <h3>Elie Tamer</h3>
             <p class="speaker-institution">Harvard University</p>
-            <span class="speaker-tag">Plenária</span>
+            <span class="speaker-tag" data-en="Plenary" data-pt="Plenária">Plenária</span>
           </div>
           <div class="speaker-card">
             <h3>Giuseppe Cavaliere</h3>
             <p class="speaker-institution">
               Università di Bologna, University of Exeter
             </p>
-            <span class="speaker-tag">Plenária</span>
+            <span class="speaker-tag" data-en="Plenary" data-pt="Plenária">Plenária</span>
           </div>
           <div class="speaker-card">
             <h3>Cristine Pinto</h3>
@@ -946,9 +988,9 @@
     <section id="local" class="venue fade-in">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Local</p>
+          <p class="section-label" data-en="Venue" data-pt="Local">Local</p>
           <h2>Casa das Garças</h2>
-          <p style="opacity: 0.9; max-width: 700px; margin: 1rem auto">
+          <p style="opacity: 0.9; max-width: 700px; margin: 1rem auto" data-en="In the heart of Rio de Janeiro, a unique space designed by Oscar Niemeyer with gardens by Burle Marx." data-pt="No coração do Rio de Janeiro, um espaço único com projeto arquitetônico de Oscar Niemeyer e jardins de Burle Marx.">
             No coração do Rio de Janeiro, um espaço único com projeto
             arquitetônico de Oscar Niemeyer e jardins de Burle Marx.
           </p>
@@ -958,7 +1000,7 @@
             <div class="venue-detail">
               <div class="venue-icon">📍</div>
               <div class="venue-detail-content">
-                <h4>Endereço</h4>
+                <h4 data-en="Address" data-pt="Endereço">Endereço</h4>
                 <p>
                   Avenida Padre Leonel Franca, 135<br />Gávea, Rio de Janeiro,
                   RJ
@@ -969,8 +1011,8 @@
             <div class="venue-detail">
               <div class="venue-icon">🏛️</div>
               <div class="venue-detail-content">
-                <h4>Instituto de Estudos de Política Econômica</h4>
-                <p>
+                <h4 data-en="Institute for Economic Policy Studies" data-pt="Instituto de Estudos de Política Econômica">Instituto de Estudos de Política Econômica</h4>
+                <p data-en="A venue with an auditorium for 60 people in a historic residence, designed to provide an environment of academic excellence." data-pt="Espaço com auditório para 60 pessoas em residência histórica, projetada para proporcionar um ambiente acadêmico de excelência.">
                   Espaço com auditório para 60 pessoas em residência histórica,
                   projetada para proporcionar um ambiente acadêmico de
                   excelência.
@@ -981,8 +1023,8 @@
             <div class="venue-detail">
               <div class="venue-icon">🚇</div>
               <div class="venue-detail-content">
-                <h4>Como Chegar</h4>
-                <p>
+                <h4 data-en="How to Get There" data-pt="Como Chegar">Como Chegar</h4>
+                <p data-en="<strong>Subway:</strong> Antero de Quental or Botafogo stations + Surface Metro to PUC-Gávea terminal<br /><strong>Bus:</strong> Lines 432, 435, 410, 539, 583, 112 (PUC Terminal)" data-pt="<strong>Metrô:</strong> Estações Antero de Quental ou Botafogo + Metrô Superfície até terminal PUC-Gávea<br /><strong>Ônibus:</strong> Linhas 432, 435, 410, 539, 583, 112 (Terminal PUC)">
                   <strong>Metrô:</strong> Estações Antero de Quental ou Botafogo
                   + Metrô Superfície até terminal PUC-Gávea<br />
                   <strong>Ônibus:</strong> Linhas 432, 435, 410, 539, 583, 112
@@ -1008,12 +1050,12 @@
     <section id="programa" class="program fade-in">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Programação</p>
-          <h2>Agenda do Evento</h2>
+          <p class="section-label" data-en="Schedule" data-pt="Programação">Programação</p>
+          <h2 data-en="Event Agenda" data-pt="Agenda do Evento">Agenda do Evento</h2>
         </div>
         <div class="placeholder-box">
-          <h3>Programação em Breve</h3>
-          <p>
+          <h3 data-en="Program Coming Soon" data-pt="Programação em Breve">Programação em Breve</h3>
+          <p data-en="The detailed schedule with session times, lectures, and coffee breaks will be announced soon. Stay tuned for updates!" data-pt="A programação detalhada com horários das sessões, palestras e coffee breaks será divulgada em breve. Fique atento às atualizações!">
             A programação detalhada com horários das sessões, palestras e coffee
             breaks será divulgada em breve. Fique atento às atualizações!
           </p>
@@ -1025,12 +1067,12 @@
     <section id="inscricoes" class="registration fade-in">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Participação</p>
-          <h2>Inscrições</h2>
+          <p class="section-label" data-en="Participation" data-pt="Participação">Participação</p>
+          <h2 data-en="Registration" data-pt="Inscrições">Inscrições</h2>
         </div>
         <div class="placeholder-box">
-          <h3>Inscrições em Breve</h3>
-          <p>
+          <h3 data-en="Registration Coming Soon" data-pt="Inscrições em Breve">Inscrições em Breve</h3>
+          <p data-en="The registration system will open soon. Stay tuned for updates on this page or contact the organizers for more information." data-pt="O sistema de inscrições será aberto em breve. Fique atento às atualizações nesta página ou entre em contato com os organizadores para mais informações.">
             O sistema de inscrições será aberto em breve. Fique atento às
             atualizações nesta página ou entre em contato com os organizadores
             para mais informações.
@@ -1043,18 +1085,18 @@
     <section id="hospedagem" class="accommodation fade-in">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Hospedagem</p>
-          <h2>Onde se Hospedar</h2>
+          <p class="section-label" data-en="Accommodation" data-pt="Hospedagem">Hospedagem</p>
+          <h2 data-en="Where to Stay" data-pt="Onde se Hospedar">Onde se Hospedar</h2>
         </div>
         <div class="placeholder-box">
-          <h3>Hotéis Recomendados em Breve</h3>
-          <p>
+          <h3 data-en="Recommended Hotels Coming Soon" data-pt="Hotéis Recomendados em Breve">Hotéis Recomendados em Breve</h3>
+          <p data-en="Casa das Garças is located in Gávea, with easy access to the Leblon, Ipanema, and Jardim Botânico neighborhoods. We recommend that participants seek accommodation in these areas for greater convenience during the event." data-pt="A Casa das Garças está localizada na Gávea, com fácil acesso aos bairros de Leblon, Ipanema e Jardim Botânico. Recomendamos que os participantes busquem hospedagem nessas regiões para maior comodidade durante o evento.">
             A Casa das Garças está localizada na Gávea, com fácil acesso aos
             bairros de Leblon, Ipanema e Jardim Botânico. Recomendamos que os
             participantes busquem hospedagem nessas regiões para maior
             comodidade durante o evento.
           </p>
-          <p style="margin-top: 1.5rem; color: var(--gray)">
+          <p style="margin-top: 1.5rem; color: var(--gray)" data-en="A list of recommended hotels near the venue will be announced soon." data-pt="Em breve divulgaremos uma lista de hotéis recomendados próximos ao local do evento.">
             Em breve divulgaremos uma lista de hotéis recomendados próximos ao
             local do evento.
           </p>
@@ -1066,12 +1108,12 @@
     <section class="sponsors fade-in">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Apoio</p>
-          <h2>Patrocinadores</h2>
+          <p class="section-label" data-en="Support" data-pt="Apoio">Apoio</p>
+          <h2 data-en="Sponsors" data-pt="Patrocinadores">Patrocinadores</h2>
         </div>
         <div class="placeholder-box">
-          <h3>Patrocinadores Confirmados em Breve</h3>
-          <p>
+          <h3 data-en="Sponsors to be Confirmed Soon" data-pt="Patrocinadores Confirmados em Breve">Patrocinadores Confirmados em Breve</h3>
+          <p data-en="This section will be updated with the logos of institutions and companies supporting the 5th Rio–São Paulo Econometrics Workshop." data-pt="Esta seção será atualizada com os logos das instituições e empresas que apoiam a 5ª Oficina Rio–São Paulo de Econometria.">
             Esta seção será atualizada com os logos das instituições e empresas
             que apoiam a 5ª Oficina Rio–São Paulo de Econometria.
           </p>
@@ -1082,12 +1124,12 @@
     <!-- Footer -->
     <footer>
       <div class="container">
-        <div class="footer-logo">5ª Oficina Rio–São Paulo de Econometria</div>
-        <p>4-5 de Maio de 2026 • Casa das Garças, Rio de Janeiro</p>
-        <p style="margin-top: 1.5rem; font-size: 0.9rem">
+        <div class="footer-logo" data-en="5th Rio–São Paulo Econometrics Workshop" data-pt="5ª Oficina Rio–São Paulo de Econometria">5ª Oficina Rio–São Paulo de Econometria</div>
+        <p data-en="May 4-5, 2026 • Casa das Garças, Rio de Janeiro" data-pt="4-5 de Maio de 2026 • Casa das Garças, Rio de Janeiro">4-5 de Maio de 2026 • Casa das Garças, Rio de Janeiro</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem" data-en="Department of Economics • PUC-Rio" data-pt="Departamento de Economia • PUC-Rio">
           Departamento de Economia • PUC-Rio
         </p>
-        <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.85rem">
+        <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.85rem" data-en="© 2026 Rio–São Paulo Econometrics Workshop. All rights reserved." data-pt="© 2026 Oficina Rio–São Paulo de Econometria. Todos os direitos reservados.">
           © 2026 Oficina Rio–São Paulo de Econometria. Todos os direitos
           reservados.
         </p>
@@ -1137,6 +1179,41 @@
 
       document.querySelectorAll(".fade-in").forEach((el) => {
         observer.observe(el);
+      });
+
+      // Language Toggle
+      let currentLang = "pt";
+      const langToggle = document.getElementById("langToggle");
+      const langOptions = langToggle.querySelectorAll(".lang-option");
+
+      function setLanguage(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : "en-US";
+
+        // Update active state on toggle
+        langOptions.forEach((opt) => {
+          opt.classList.toggle("active", opt.dataset.lang === lang);
+        });
+
+        // Update all translatable content
+        document.querySelectorAll("[data-en][data-pt]").forEach((el) => {
+          const text = el.getAttribute(`data-${lang}`);
+          if (text) {
+            el.innerHTML = text;
+          }
+        });
+
+        // Update page title
+        document.title =
+          lang === "pt"
+            ? "5ª Oficina Rio–São Paulo de Econometria | 4-5 Maio 2026"
+            : "5th Rio–São Paulo Econometrics Workshop | May 4-5, 2026";
+      }
+
+      langOptions.forEach((opt) => {
+        opt.addEventListener("click", () => {
+          setLanguage(opt.dataset.lang);
+        });
       });
     </script>
   </body>
