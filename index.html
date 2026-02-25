@@ -104,9 +104,10 @@
         gap: 0.5rem;
       }
 
-      .logo-accent {
-        color: var(--gold);
-        font-size: 2rem;
+      .logo-icon {
+        height: 2rem;
+        width: auto;
+        object-fit: contain;
       }
 
       .nav-links {
@@ -1042,17 +1043,14 @@
       content="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=1200&h=630&fit=crop&crop=entropy&auto=format"
     />
 
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>"
-    />
+    <link rel="icon" type="image/png" href="img/logo-oficina.png" />
   </head>
   <body>
     <!-- Navigation -->
     <nav id="navbar">
       <div class="nav-container">
         <a href="#" class="logo">
-          <span class="logo-accent">◆</span> 5ª Oficina de Econometria
+          <img src="img/logo-oficina.png" alt="5ª Oficina Rio–São Paulo de Econometria" class="logo-icon" /> Oficina de Econometria
         </a>
         <ul class="nav-links">
           <li><a href="#sobre" data-en="About" data-pt="Sobre">Sobre</a></li>
@@ -1675,9 +1673,6 @@
           </div>
           <div class="sponsor-logo dark-bg">
             <img src="img/logo-cdg.png" alt="Casa das Garças" />
-          </div>
-          <div class="sponsor-logo">
-            <img src="img/logo-oficina.png" alt="Oficina Rio–São Paulo de Econometria" />
           </div>
         </div>
       </div>
